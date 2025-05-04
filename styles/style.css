@@ -1,5 +1,52 @@
+:root {
+    --primary-col: #502314;
+    --lightgray-col: #d3d3d3;
+    --white-col: #fff;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.container{
+    padding: 16px
+}
+/* header */
+.header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.logo svg {
+    width: 170px;
+}
+
+/* navbar */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.view-cart {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    padding: 4px 16px;
+    border: 1px solid var(--primary-col);
+}
+.view-cart svg {
+    width: 18px;
 }
