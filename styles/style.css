@@ -3,6 +3,10 @@
     src: url(../assets/fonts/FlameBold.f5c03d0423793ab1621fbcefe7086e34.ttf);
     font-weight: bold;
 }
+@font-face {
+    font-family: FlameRegular;
+    src: url(../assets/fonts/FlameRegular.83b0c58a6ec6af89fd625531a97603e1.ttf);
+}
 
 :root {
     --primary-col: #502314;
@@ -14,6 +18,7 @@
 }
 body {
     background-color: var(--theme-col-one);
+    overflow: hidden;
 }
 /* icons */
 .material-symbols-outlined {
@@ -78,20 +83,85 @@ body {
 
 /* hero */
 .hero {
-    padding: 20px 0px;
+    width: 100%;
+    padding: 20px;
     max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* align-items: center; */
+    justify-items: self-start;
     margin: 0 auto;
+    gap: 12px;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+.hero-btn {
+    padding: 8px 16px;
+    min-height: 50px;
+    outline-width: 0px;
+    border-radius: 100px;
+    font-family: FlameRegular;
+    border: none;
+    width: 320px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.hero-cta {
+    background-color: var(--btn-col);
+    color: var(--white-col);
+}
+.button-group .hero-btn:nth-child(2) {
+    background-color: var(--theme-col-one);
+    border: 1px solid var(--primary-col);
 }
 .grid-item-lt {
-    width: 400px;
+    width: 100%;
+    max-width: 380px;
 }
 .grid-item-lt .theme-text {
     font-size: 4rem;
 }
+.grid-item-rt {
+    width: 100%;
+    position: relative;
+}
 .hero-img img {
-    width: 800px;
+    object-position: left 50% top 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+}
+
+/* media-queries */
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0px;
+    }
+    .grid-item-rt {
+        position: static;
+    }
+    .hero-img img{
+        top: 60px;
+        height: 70%;
+    }
+    .grid-item-lt {
+        position: absolute;
+        top: 700px;
+        padding: 0px 10px;
+        max-width: 100%;
+    }
+    .hero-btn {
+        width: 100%;
+    }
+    .grid-item-lt .theme-text {
+        display: none;
+    }
 }
