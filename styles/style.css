@@ -156,9 +156,9 @@ body {
 }
 .download-lt img {
     width: 400px;
-    position: absolute;
+    position: relative;
     top: -40px;
-    left: 200px;
+    /* left: 200px; */
 }
 .download-lt img:nth-child(2) {
     display: none;
@@ -206,7 +206,6 @@ body {
     position: fixed;
     background-color: var(--white-col);
     width: 100%;
-    /* max-width: 1200px; */
     margin: 0px auto;
     height: 50px;
     bottom: 0px;
@@ -232,12 +231,16 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    font-family: FlameRegular;
 }
 .bottom-nav li img {
     width: 20px;
 }
 /* media-queries */
 @media (max-width: 960px) {
+    .view-cart {
+        display: none;
+    }
     .hero {
         grid-template-columns: 1fr;
         padding: 0px;
@@ -267,7 +270,7 @@ body {
     }
     .download-lt img{
         display: none;
-        left: 50px;
+        left: 0px;
     }
     .download-lt img:nth-child(2) {
         display: block;
@@ -278,5 +281,8 @@ body {
     }
     .download-app-desc {
         text-align: center;
+    }
+    .footer {
+        bottom: -350px;
     }
 }
